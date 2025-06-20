@@ -1,4 +1,5 @@
 import { Award, Eye, Shield, Target, Users, Zap } from "lucide-react";
+import { useEffect } from "react";
 
 const About = () => {
   const strengths = [
@@ -23,6 +24,9 @@ const About = () => {
       description: "Rigorous testing and quality control processes",
     },
   ];
+  useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
 
   return (
     <div className="dark:bg-gray-900 transition-colors duration-200">
@@ -87,9 +91,9 @@ const About = () => {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-[#d7f9fa] dark:bg-[#1e3f40] p-6 rounded-lg text-center shadow-md transition-colors duration-200"
+                  className="bg-lightBg dark:bg-darkBg p-6 rounded-lg text-center shadow-md transition-colors duration-200"
                 >
-                  <h3 className="text-3xl font-bold text-[#00c3cb] dark:text-[#70e6e9] mb-2 transition-colors duration-200">
+                  <h3 className="text-3xl font-bold text-primary dark:text-secondary mb-2 transition-colors duration-200">
                     {item.value}
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300 transition-colors duration-200">
@@ -109,8 +113,8 @@ const About = () => {
             {/* Mission */}
             <div className="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg transition-colors duration-200">
               <div className="flex items-center mb-6">
-                <div className="p-3 bg-[#d7f9fa] dark:bg-[#1e3f40] rounded-lg mr-4 transition-colors duration-200">
-                  <Target className="h-8 w-8 text-[#00c3cb] dark:text-[#70e6e9] transition-colors duration-200" />
+                <div className="p-3 bg-lightBg dark:bg-darkBg rounded-lg mr-4 transition-colors duration-200">
+                  <Target className="h-8 w-8 text-primary dark:text-secondary transition-colors duration-200" />
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white transition-colors duration-200">
                   Our Mission
@@ -130,7 +134,7 @@ const About = () => {
             <div className="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg transition-colors duration-200">
               <div className="flex items-center mb-6">
                 <div className="p-3 bg-[#e1fbfc] dark:bg-[#1a4244] rounded-lg mr-4 transition-colors duration-200">
-                  <Eye className="h-8 w-8 text-[#00c3cb] dark:text-[#70e6e9] transition-colors duration-200" />
+                  <Eye className="h-8 w-8 text-primary dark:text-secondary transition-colors duration-200" />
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white transition-colors duration-200">
                   Our Vision
@@ -169,7 +173,7 @@ const About = () => {
                 className="text-center group transition-transform duration-300 hover:scale-105"
               >
                 <div className="p-4 bg-gradient-to-br from-[#d7f9fa] to-[#e1fbfc] dark:from-[#1e3f40] dark:to-[#1a4244] rounded-xl mb-6 inline-block transition-colors duration-200">
-                  <div className="text-[#00c3cb] dark:text-[#70e6e9] transition-colors duration-200">
+                  <div className="text-primary dark:text-secondary transition-colors duration-200">
                     {strength.icon}
                   </div>
                 </div>
@@ -247,7 +251,7 @@ const About = () => {
           solutions that make a real difference.
         </p>
         <div className="bg-white bg-opacity-20 dark:bg-white/10 p-4 rounded-lg">
-          <p className="text-center text-lg font-semibold text-white dark:text-[#70e6e9]">
+          <p className="text-center text-lg font-semibold text-white dark:text-secondary">
             "Your Satisfaction, Our Commitment"
           </p>
         </div>

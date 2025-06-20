@@ -1,4 +1,5 @@
 import { ArrowRight, Cloud, Globe, Settings, Smartphone } from "lucide-react";
+import { useEffect } from "react";
 
 const Products = () => {
   const products = [
@@ -83,6 +84,9 @@ const Products = () => {
       ],
     },
   ];
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="dark:bg-gray-900 transition-colors duration-200">
@@ -139,7 +143,7 @@ const Products = () => {
                 >
                   <div className="flex items-center mb-6">
                     <div className="p-4 bg-gradient-to-br from-[#e0fafa] to-[#e6faff] dark:from-[#113d3d] dark:to-[#1f2a30] rounded-xl mr-6 transition-colors duration-200">
-                      <div className="text-[#00c3cb] dark:text-[#70e6e9] transition-colors duration-200">
+                      <div className="text-[primary] dark:text-[#70e6e9] transition-colors duration-200">
                         {product.icon}
                       </div>
                     </div>
@@ -161,7 +165,7 @@ const Products = () => {
                       <ul className="space-y-2">
                         {product.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center">
-                            <div className="w-2 h-2 bg-[#00c3cb] dark:bg-[#70e6e9] rounded-full mr-3 transition-colors duration-200"></div>
+                            <div className="w-2 h-2 bg-[primary] dark:bg-[#70e6e9] rounded-full mr-3 transition-colors duration-200"></div>
                             <span className="text-gray-700 dark:text-gray-300 transition-colors duration-200">
                               {feature}
                             </span>
@@ -178,7 +182,7 @@ const Products = () => {
                       <ul className="space-y-2">
                         {product.benefits.map((benefit, benefitIndex) => (
                           <li key={benefitIndex} className="flex items-center">
-                            <div className="w-2 h-2 bg-[#70e6e9] dark:bg-[#00c3cb] rounded-full mr-3 transition-colors duration-200"></div>
+                            <div className="w-2 h-2 bg-[#70e6e9] dark:bg-[primary] rounded-full mr-3 transition-colors duration-200"></div>
                             <span className="text-gray-700 dark:text-gray-300 transition-colors duration-200">
                               {benefit}
                             </span>
@@ -191,7 +195,7 @@ const Products = () => {
                   <div className="mt-8">
                     <a
                       href="/contact"
-                      className="inline-flex items-center px-6 py-3 bg-[#00c3cb] text-white font-semibold rounded-lg hover:bg-[#019ea3] transition-colors duration-200"
+                      className="inline-flex items-center px-6 py-3 bg-[primary] text-white font-semibold rounded-lg hover:bg-[primaryDark] transition-colors duration-200"
                     >
                       Learn More
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -352,33 +356,6 @@ const Products = () => {
                 </p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-cyan-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Build Your Next Product?
-          </h2>
-          <p className="text-blue-100 text-lg mb-8">
-            Let's discuss your requirements and create a solution that drives
-            your business forward
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/contact"
-              className="px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200"
-            >
-              Start Your Project
-            </a>
-            <a
-              href="/consulting"
-              className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors duration-200"
-            >
-              Get Consultation
-            </a>
           </div>
         </div>
       </section>

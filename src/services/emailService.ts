@@ -1,9 +1,9 @@
 import emailjs from '@emailjs/browser';
 
 // EmailJS configuration
-const SERVICE_ID = 'your_service_id'; // Replace with your EmailJS service ID
-const TEMPLATE_ID = 'your_template_id'; // Replace with your EmailJS template ID
-const PUBLIC_KEY = 'your_public_key'; // Replace with your EmailJS public key
+const SERVICE_ID = 'service_x5yi5bh'; // Replace with your EmailJS service ID
+const TEMPLATE_ID = 'template_clz0gyq'; // Replace with your EmailJS template ID
+const PUBLIC_KEY = 'xcoQuXs7Xfk2Ynznm'; // Replace with your EmailJS public key
 
 export interface EmailData {
   name: string;

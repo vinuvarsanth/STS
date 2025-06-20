@@ -1,20 +1,15 @@
 import {
   ArrowRight,
-  ChevronLeft,
-  ChevronRight,
   Cloud,
   Code,
   Headphones,
   Network,
   Server,
-  Star,
 } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTheme } from "../contexts/ThemeContext";
 const Home = () => {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  const [email, setEmail] = useState("");
   const { theme } = useTheme();
   const services = [
     {
@@ -46,43 +41,11 @@ const Home = () => {
     },
   ];
 
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      company: "TechStart Inc.",
-      text: "STS transformed our IT infrastructure completely. Their team is professional, knowledgeable, and always available when we need support.",
-      rating: 5,
-    },
-    {
-      name: "Michael Chen",
-      company: "Growth Dynamics",
-      text: "The cloud migration project was executed flawlessly. We saw immediate improvements in performance and significant cost savings.",
-      rating: 5,
-    },
-    {
-      name: "Emily Rodriguez",
-      company: "Innovate Solutions",
-      text: "Outstanding software development services. They delivered exactly what we needed, on time and within budget.",
-      rating: 5,
-    },
-  ];
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
 
-  const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  };
 
-  const prevTestimonial = () => {
-    setCurrentTestimonial(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
-    );
-  };
-
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Newsletter subscription:", email);
-    setEmail("");
-    alert("Thank you for subscribing!");
-  };
 
   return (
     <div className="dark:bg-gray-900 transition-colors duration-200">
@@ -140,7 +103,7 @@ const Home = () => {
               </p>
               <Link
                 to="/about"
-                className="inline-flex items-center text-[#00c3cb] dark:text-[#70e6e9] font-semibold hover:text-[#009ba1] dark:hover:text-[#5ad4d7] transition-colors duration-200"
+                className="inline-flex items-center text-primary dark:text-secondary font-semibold hover:text-[#009ba1] dark:hover:text-[#5ad4d7] transition-colors duration-200"
               >
                 Learn More About Us
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -148,16 +111,16 @@ const Home = () => {
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-[#d7f9fa] dark:bg-[#1e3f40] p-6 rounded-lg transition-colors duration-200">
-                <h3 className="text-2xl font-bold text-[#00c3cb] dark:text-[#70e6e9] mb-2 transition-colors duration-200">
+              <div className="bg-lightBg dark:bg-darkBg p-6 rounded-lg transition-colors duration-200">
+                <h3 className="text-2xl font-bold text-primary dark:text-secondary mb-2 transition-colors duration-200">
                   50+
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 transition-colors duration-200">
                   Projects Completed
                 </p>
               </div>
-              <div className="bg-[#e1fbfc] dark:bg-[#1a4244] p-6 rounded-lg transition-colors duration-200">
-                <h3 className="text-2xl font-bold text-[#00c3cb] dark:text-[#70e6e9] mb-2 transition-colors duration-200">
+              <div className="bg-lightBgAlt dark:bg-darkBgAlt p-6 rounded-lg transition-colors duration-200">
+                <h3 className="text-2xl font-bold text-primary dark:text-secondary mb-2 transition-colors duration-200">
                   99.9%
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 transition-colors duration-200">
@@ -204,7 +167,7 @@ const Home = () => {
                 key={index}
                 className="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 group"
               >
-                <div className="text-[#00c3cb] dark:text-[#70e6e9] mb-4 group-hover:scale-110 transition-transform duration-200">
+                <div className="text-primary dark:text-secondary mb-4 group-hover:scale-110 transition-transform duration-200">
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 transition-colors duration-200">
@@ -229,86 +192,33 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      {/* <section className="py-16 bg-white dark:bg-gray-900 transition-colors duration-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-200">
-              What Our Clients Say
-            </h2>
-            <p className="text-gray-600 dark:text-gray-300 transition-colors duration-200">
-              Real feedback from businesses we've helped transform
-            </p>
-          </div>
-
-          <div className="relative">
-            <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl transition-colors duration-200 shadow-md">
-              <div className="flex items-center justify-center mb-4">
-                {[...Array(testimonials[currentTestimonial].rating)].map(
-                  (_, i) => (
-                    <Star
-                      key={i}
-                      className="h-5 w-5 text-yellow-400 fill-current"
-                    />
-                  )
-                )}
-              </div>
-              <blockquote className="text-lg text-gray-700 dark:text-gray-300 text-center mb-6 italic transition-colors duration-200">
-                "{testimonials[currentTestimonial].text}"
-              </blockquote>
-              <div className="text-center">
-                <p className="font-semibold text-gray-900 dark:text-white transition-colors duration-200">
-                  {testimonials[currentTestimonial].name}
-                </p>
-                <p className="text-[#00c3cb] dark:text-[#70e6e9] font-medium transition-colors duration-200">
-                  {testimonials[currentTestimonial].company}
-                </p>
-              </div>
-            </div>
-
-            <button
-              onClick={prevTestimonial}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-700 rounded-full p-2 shadow-lg hover:bg-[#00c3cb] hover:text-white dark:hover:bg-[#00c3cb] transition-all duration-200"
-            >
-              <ChevronLeft className="h-6 w-6 text-gray-600 dark:text-gray-300" />
-            </button>
-            <button
-              onClick={nextTestimonial}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-700 rounded-full p-2 shadow-lg hover:bg-[#00c3cb] hover:text-white dark:hover:bg-[#00c3cb] transition-all duration-200"
-            >
-              <ChevronRight className="h-6 w-6 text-gray-600 dark:text-gray-300" />
-            </button>
-          </div>
-
-          <div className="flex justify-center mt-6 space-x-2">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentTestimonial(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentTestimonial
-                    ? "bg-gradient-to-r from-[#00c3cb] to-[#70e6e9]"
-                    : "bg-gray-300 dark:bg-gray-600"
-                }`}
-              />
-            ))}
-          </div>
-        </div>
-      </section> */}
-
       {/* CTA Banner */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-cyan-600">
+      <section
+        className={`py-16 border-t-2 ${
+          theme === "dark"
+            ? "bg-gray-900 border-[#00c3cb]"
+            : "bg-white border-[#00c3cb]"
+        } transition-colors duration-300`}
+      >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2
+            className={`text-3xl md:text-4xl font-bold mb-4 ${
+              theme === "dark" ? "text-white" : "text-black"
+            }`}
+          >
             Let's Build Your Future Together
           </h2>
-          <p className="text-blue-100 text-lg mb-8">
+          <p
+            className={`text-lg mb-8 ${
+              theme === "dark" ? "text-gray-300" : "text-gray-700"
+            }`}
+          >
             Ready to transform your business with innovative IT solutions? Get
             started today.
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#00c3cb] to-[#70e6e9] text-white font-semibold rounded-lg hover:from-[#00aeb4] hover:to-[#5cdfe3] transition-colors duration-200"
           >
             Get Started Now
             <ArrowRight className="ml-2 h-5 w-5" />

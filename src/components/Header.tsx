@@ -64,8 +64,8 @@ const Header = () => {
                 to={item.href}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                   isActive(item.href)
-                    ? "text-[#00c3cb] bg-[#00c3cb]/10 dark:bg-[#00c3cb]/20 dark:text-[#70e6e9]"
-                    : "text-gray-700 dark:text-gray-300 hover:text-[#00c3cb] dark:hover:text-[#70e6e9] hover:bg-gray-50 dark:hover:bg-gray-800"
+                    ? "text-primary bg-primary/10 dark:bg-primary/20 dark:text-secondary"
+                    : "text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary hover:bg-gray-50 dark:hover:bg-gray-800"
                 }`}
               >
                 {item.name}
@@ -78,7 +78,7 @@ const Header = () => {
             <ThemeToggle />
             <Link
               to="/contact"
-              className="bg-gradient-to-r from-[#00c3cb] to-[#70e6e9] text-white px-6 py-2 rounded-lg hover:from-[#00aeb4] hover:to-[#5cdfe3] transition-all duration-200 font-medium"
+              className="bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-lg hover:from-primaryDark hover:to-[#5cdfe3] transition-all duration-200 font-medium"
             >
               Get Started
             </Link>
@@ -89,7 +89,7 @@ const Header = () => {
             <ThemeToggle />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 dark:text-gray-300 hover:text-[#00c3cb] dark:hover:text-[#70e6e9] transition-colors duration-200"
+              className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors duration-200"
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -110,8 +110,8 @@ const Header = () => {
                   to={item.href}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
                     isActive(item.href)
-                      ? "text-[#00c3cb] dark:text-[#70e6e9] bg-[#00c3cb]/10 dark:bg-[#00c3cb]/20"
-                      : "text-gray-700 dark:text-gray-300 hover:text-[#00c3cb] dark:hover:text-[#70e6e9] hover:bg-white dark:hover:bg-gray-700"
+                      ? "text-primary dark:text-secondary bg-primary/10 dark:bg-primary/20"
+                      : "text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary hover:bg-white dark:hover:bg-gray-700"
                   }`}
                 >
                   {item.name}
@@ -119,7 +119,7 @@ const Header = () => {
               ))}
               <Link
                 to="/contact"
-                className="block px-3 py-2 mt-4 bg-gradient-to-r from-[#00c3cb] to-[#70e6e9] text-white rounded-lg hover:from-[#00aeb4] hover:to-[#5cdfe3] transition-all duration-200 font-medium text-center"
+                className="block px-3 py-2 mt-4 bg-gradient-to-r from-primary to-secondary text-white rounded-lg hover:from-primaryDark hover:to-[#5cdfe3] transition-all duration-200 font-medium text-center"
               >
                 Get Started
               </Link>

@@ -1,5 +1,5 @@
 import { Clock, Mail, MapPin, Phone, Send } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { EmailData, sendEmail } from "../services/emailService";
 
 const Contact = () => {
@@ -39,6 +39,9 @@ const Contact = () => {
       setIsSubmitting(false);
     }
   };
+  useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
 
   return (
     <div className="dark:bg-gray-900 transition-colors duration-200">
@@ -177,7 +180,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00c3cb] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white disabled:opacity-50"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white disabled:opacity-50"
                       placeholder="Enter your full name"
                     />
                   </div>
@@ -197,7 +200,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00c3cb] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white disabled:opacity-50"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white disabled:opacity-50"
                       placeholder="Enter your email address"
                     />
                   </div>
@@ -217,7 +220,7 @@ const Contact = () => {
                       required
                       disabled={isSubmitting}
                       rows={6}
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00c3cb] focus:border-transparent resize-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white disabled:opacity-50"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white disabled:opacity-50"
                       placeholder="Tell us about your project or inquiry..."
                     ></textarea>
                   </div>
@@ -225,7 +228,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full flex items-center justify-center px-6 py-3 bg-gradient-to-r from-[#00c3cb] to-[#70e6e9] text-white font-semibold rounded-lg hover:from-[#00b5bd] hover:to-[#5cd7da] disabled:from-[#99e8ea] disabled:to-[#ccf6f7] transition-all duration-200"
+                    className="w-full flex items-center justify-center px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-lg hover:from-[#00b5bd] hover:to-[#5cd7da] disabled:from-[#99e8ea] disabled:to-[#ccf6f7] transition-all duration-200"
                   >
                     {isSubmitting ? (
                       <>
@@ -333,19 +336,6 @@ const Contact = () => {
               </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-cyan-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Get Started?
-          </h2>
-          <p className="text-blue-100 text-lg mb-8">
-            Let's discuss your project and how we can help you achieve your
-            goals
-          </p>
         </div>
       </section>
     </div>
