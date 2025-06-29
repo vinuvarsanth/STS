@@ -40,8 +40,8 @@ const Contact = () => {
     }
   };
   useEffect(() => {
-  window.scrollTo(0, 0);
-}, []);
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="dark:bg-gray-900 transition-colors duration-200">
@@ -117,7 +117,8 @@ const Contact = () => {
                       Phone
                     </h3>
                     <p className="text-gray-600 dark:text-gray-300">
-                      +91 98424 25433
+                      +91 98424 25433 <br />
+                      +91 89037 87441
                     </p>
                   </div>
                 </div>

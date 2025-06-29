@@ -1,12 +1,11 @@
-import { Facebook, Github, Linkedin } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Facebook, Github, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-r from-primary to-secondary text-white transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          
           {/* Company Info & Contact */}
           <div>
             <img
@@ -15,7 +14,8 @@ const Footer = () => {
               className="h-28 w-auto mb-5 filter bg-white rounded-lg shadow-lg transition-transform duration-200 "
             />
             <p className="text-sm mb-4 text-black">
-              Your trusted partner for innovative IT solutions and digital transformation.
+              Your trusted partner for innovative IT solutions and digital
+              transformation.
             </p>
             <div className="flex space-x-4 mb-4">
               <a
@@ -40,7 +40,7 @@ const Footer = () => {
 
             <div className="text-sm space-y-1 text-black">
               <p>
-                Email:{' '}
+                Email:{" "}
                 <a
                   href="mailto:shanmugatechnovative@gmail.com"
                   className="underline text-black"
@@ -49,12 +49,18 @@ const Footer = () => {
                 </a>
               </p>
               <p>
-                Phone:{' '}
-                <a href="tel:+919585121202" className="underline text-black">
-                  +91 95851 21202
+                Phone:{" "}
+                <a href="tel:+918903787441" className="underline text-black">
+                  <br />
+                  +91 89037 87441
+                  <br />
+                  +91 98424 25433
                 </a>
               </p>
-              <p>Location: Coimbatore, Tamil Nadu, India</p>
+              <p>
+                Location: 188/5, Malayappa Gounder Gandhi Nagar Udumalpet,
+                Tiruppur District Tamil Nadu – 642154 India
+              </p>
             </div>
           </div>
 
@@ -63,12 +69,12 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4 text-black">Quick Links</h3>
             <ul className="space-y-2 text-black">
               {[
-                { name: 'Home', to: '/' },
-                { name: 'About', to: '/about' },
-                { name: 'Services', to: '/services' },
-                { name: 'Products', to: '/products' },
-                { name: 'Consulting', to: '/consulting' },
-                { name: 'Contact', to: '/contact' },
+                { name: "Home", to: "/" },
+                { name: "About", to: "/about" },
+                { name: "Services", to: "/services" },
+                { name: "Products", to: "/products" },
+                { name: "Consulting", to: "/consulting" },
+                { name: "Contact", to: "/contact" },
               ].map((link) => (
                 <li key={link.name}>
                   <Link
@@ -87,11 +93,11 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4 text-black">Services</h3>
             <ul className="space-y-2 text-black">
               {[
-                'API Communication & Integration',
-                'Web & Mobile Infrastructure',
-                'Managed Services',
-                'Cloud Services',
-                'Software Solutions',
+                "API Communication & Integration",
+                "Web & Mobile Infrastructure",
+                "Managed Services",
+                "Cloud Services",
+                "Software Solutions",
               ].map((service) => (
                 <li
                   key={service}
